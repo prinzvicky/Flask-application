@@ -1,4 +1,4 @@
-This is a web application developed for the farmers.
+DESCRIPTION: This is a web application developed for the farmers.
 
 LANGUAGES USED:
   Backend- python, mysql
