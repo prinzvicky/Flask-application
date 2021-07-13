@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+
+{% block image %}
+<style>
+  .background{
+    height: 100vh;
+  }
+</style>
+{% endblock image %}
+
+{% block content %}
+  <video class = "home-video"src = "/static/img/Pexels Videos 1620050.mp4" muted loop autoplay></video>
+  <div class="overlay"></div>
+  <div class = "content">
+
+  <h1>LET US CARE AND SHARE YOUR FARM</h1>
+  <h2>WELCOME TO HAGROCARE</h2>
+  <p>we provide the best care and service for you</p>
+  <a href="{{url_for('registration')}}" class="btn btn-default btn-outline" >GET STARTED</a>
+</div>
+{% endblock content %}

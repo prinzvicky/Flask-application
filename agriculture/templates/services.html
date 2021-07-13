@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+{% block image %}
+<style>
+	.background{
+		background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.65)), url('/static/img/about.jpg');
+		background-position: center;
+	    background-repeat: no-repeat;
+	    height: 400px;
+	    width: 100%;
+	}
+</style>
+{% endblock image %}
+{% block content %}
+<div class="content-services">
+	<h1>
+		WHAT WE DO
+	</h1>
+	<h3>
+		Services
+	</h3>
+	<p>we provide for agriculture sector</p>
+</div>
+{% endblock content %}
+{% block about %}
+<div class = "weather">
+	<div class="weather-content">
+	<h1>
+		<span><img src="/static/img/points.png"></span>
+		Weather forecast
+	</h1>
+	Weather forecasting is a prediction on conditions of atmosphere depending on location and time.agriculture and farming are mainly dependent on seasons and weather. The temperature matters a lot in that case when it comes to the farming of different kinds of fruits, vegetables, and pulses. Technology is developed and special weather forecasting mechanisms are available, the farmers can get all the updates on a smartphone. With the tap of a finger, our little pocket computers can make ensure to reduce our wastage of crops.
+	<a href="#" class="green-button" >Explore Now</a>
+	</div>
+	<img class = "weather-image" src="/static/img/weather.jpg">
+</div>
+<div class = "platform">
+	<div class = "platform-content">
+		<h1>
+			<span>
+				<img src="/static/img/points.png">
+			</span>
+			Platform between farmer and shopkeeper
+		</h1>
+		It is an open-source platform that uses peer-to-peer connectors and usage policies for the secure transfer of yields, products between organizations and farmers. Farmers access and adopt better services and practices to increase their yields and incomes. Organizations(shop keeper) grow business to better serve constituents in a coordinated, cost-effective ecosystem. This peer-to-peer connection allows for decentralized yield and product sharing without having to going through a third party.
+		<a href="#" class="green-button" >Explore Now</a>
+	</div>
+	<img class = "platform-image" src="/static/img/platform.jpeg">
+</div>
+<div class = "search">
+	<div class = "search-content">
+		<h1>
+			<span>
+				<img src="/static/img/points.png">
+			</span>
+			Search Engine
+		</h1>
+		With curiosity to nature, our webpage help you explore more details about plants. Whether you are a gardener, plant fancier, backpacker children or teacher, our webpage has a search engine which is a good helper & identifier. There is a additional voice search option that allows the user to use a voice command to perform a search.
+		<a href="#" class="green-button" >Explore Now</a>
+	</div>
+	<img class = "search-image" src="/static/img/search.jpeg">
+</div>
+{% endblock about%}

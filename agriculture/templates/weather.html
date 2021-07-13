@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/main.css') }}">
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/weather-icons.css') }}">
+	{% if title %}
+		<title>
+			{{title}}
+		</title>
+		{% else %}
+		<title>
+			temp
+		</title>
+	{% endif %}
+</head>
+<body>
+<div class = "weather-background">
+	<div class="overlay"></div>
+	<div class="wrapper">
+		<div class="weather-left">
+			<div class = "weather-details">
+			<div class="weather-icon"><img src="/static/styles/icons/unknown.png">
+			</div>
+			<div><h2 id="climate-value">Fog</h2></div>
+			<div><p id = "place-value">madurai,tirupanakundram</p></div>
+			</div>
+			<div id="curtemp-value"><h2>28<span>&#8451;</span></h2></div>
+		</div>
+		<div class = "weather-middle">
+				<form>
+					<div>
+						<input type="text" id="location-input" placeholder="Enter location" >
+					</div>
+				</form>
+				<div><button id="submiter">Submit</button></div>
+		</div>
+		<div class="weather-right">
+			<div class="humidity">
+				<p><span><i class="wi wi-humidity"></i></span> humidity</p>
+				<h1 id="humidity-value">50%</h1>
+			</div>
+			<div class="pressure">
+				<p><span><i class="wi wi-cloudy-gusts"></i></span> Pressure</p>
+				<h1 id = "pressure-value">1009.483 hPa</h1>
+			</div>
+			<div class="rain">
+				<p><span><i class = "wi wi-rain"></i></span> Feels like</p>
+				<h1 id = "feelslike-value">0.09</h1>
+			</div>
+			<div class = "windspeed">
+				<p><span><i class="wi wi-strong-wind"></i></span> Wind speed</p>
+				<h1 id = "windspeed-value">01 m/s</h1>
+			</div>
+		</div>
+	</div>
+	<div class = "weather-bottom">
+		<div class="bottom bottom-one">
+			<p>1PM<br></p>
+			<h1>28<span>&#8451;</span></h1>
+			<p class = "inv">Feels like 30<span>&#8451;</span></p>
+		</div>
+		<div class="bottom bottom-two">
+			<p>1PM</p>
+			<h1>28<span>&#8451;</span></h1>
+			<p class = "inv">Feels like 30<span>&#8451;</span></p>
+		</div>
+		<div class="bottom bottom-three">
+			<p>1PM</p>
+			<h1>28<span>&#8451;</span></h1>
+			<p class = "inv">Feels like 30<span>&#8451;</span></p>
+		</div>
+		<div class="bottom bottom-four">
+			<p>1PM</p>
+			<h1>28<span>&#8451;</span></h1>
+			<p class = "inv">Feels like 30<span>&#8451;</span></p>
+		</div>
+		<div class="bottom bottom-five">
+			<p>1PM</p>
+			<h1>28<span>&#8451;</span></h1>
+			<p class = "inv">Feels like 30<span>&#8451;</span></p>
+		</div>
+		<div class="bottom bottom-six">
+			<p>1PM</p>
+			<h1>28<span>&#8451;</span></h1>
+			<p class = "inv">Feels like 30<span>&#8451;</span></p>
+		</div>
+		<div class="bottom bottom-seven">
+			<p>1PM</p>
+			<h1>28<span>&#8451;</span></h1>
+			<p class = "inv">Feels like 30<span>&#8451;</span></p>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="/static/js/index.js"></script>
+</body>
+</html>

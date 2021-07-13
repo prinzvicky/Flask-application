@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>HAGROCARE| Farmerdetails</title>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel = "stylesheet" type="text/css" href = "{{ url_for('static',filename='styles/main.css') }}">
+</head>
+<body>
+  <div class = "farmer-background">
+    <div class="top-content">
+      <a class="btn btn-default btn-outline" id="add_button" style="text-decoration:none;">ADD</a>
+    </div>
+    <div class="form-content">
+    <form method = "POST" action="">
+    {{ form.hidden_tag() }}
+    <fieldset class = "form-group">
+      <legend class = "border-bottom mb4" id="heading-register">Details</legend>
+      <div class = "form-group">
+        {{ form.crop_name.label(class = "form-control-label") }}
+        {% if form.crop_name.errors %}
+        {{ form.crop_name(class = "form-control form-control-lg is-invalid") }}
+        <div class = "invalid-feedback" >
+          {% for error in form.crop_name.errors %}
+          <span>
+            {{error}}
+          </span>
+          {% endfor %}
+        </div>
+        {% else %}
+        {{ form.crop_name(class = "form-control form-control-lg", id="conform") }}
+        {% endif %}
+      </div>
+      <div class = "form-group">
+        {{ form.disease.label(class = "form-control-label") }}
+        {% if form.disease.errors %}
+        {{ form.disease(class = "form-control form-control-lg is-invalid") }}
+        <div class = "invalid-feedback" >
+          {% for error in form.disease.errors %}
+          <span>
+            {{error}}
+          </span>
+          {% endfor %}
+        </div>
+        {% else %}
+        {{ form.disease(class = "form-control form-control-lg", id="conform") }}
+        {% endif %}
+      </div>
+      <div class = "form-group">
+        {{ form.fertilizers.label(class = "form-control-label") }}
+        {% if form.fertilizers.errors %}
+        {{ form.fertilizers(class = "form-control form-control-lg is-invalid") }}
+        <div class = "invalid-feedback" >
+          {% for error in form.fertilizers.errors %}
+          <span>
+            {{error}}
+          </span>
+          {% endfor %}
+        </div>
+        {% else %}
+        {{ form.fertilizers(class = "form-control form-control-lg", id="conform") }}
+        {% endif %}
+      </div>
+      <div class = "form-group">
+        {{ form.crop_type.label(class = "form-control-label") }}
+        {% if form.crop_type.errors %}
+        {{ form.crop_type(class = "form-control form-control-lg is-invalid") }}
+        <div class = "invalid-feedback" >
+          {% for error in form.crop_type.errors %}
+          <span>
+            {{error}}
+          </span>
+          {% endfor %}
+        </div>
+        {% else %}
+        {{ form.crop_type(class = "form-control form-control-lg", id="conform") }}
+        {% endif %}
+      </div>
+      <div class = "form-group">
+        {{ form.date_sown.label(class = "form-control-label") }}
+        {% if form.date_sown.errors %}
+        {{ form.date_sown(class = "form-control form-control-lg is-invalid") }}
+        <div class = "invalid-feedback" >
+          {% for error in form.date_sown.errors %}
+          <span>
+            {{error}}
+          </span>
+          {% endfor %}
+        </div>
+        {% else %}
+        {{ form.date_sown(class = "form-control form-control-lg", id="conform") }}
+        {% endif %}
+      </div>
+      <div class = "form-group">
+      {{ form.submit(class = "btn btn-default btn-outline", id="crop-submit") }}
+      </div>
+    </fieldset>
+    </form>
+    </div>
+    <div class="crop-table">
+    <table class = "table-data">
+    </table>
+  </div>
+  </div>
+  <script type="text/javascript" src="{{ url_for('static', filename='js/index.js') }}"></script>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</html>

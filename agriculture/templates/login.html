@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+
+{% block image %}
+<style>
+	.background{
+		background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/static/img/temp3.jpg');
+		width: 100%;
+	    height: 722px;
+	    background-repeat: no-repeat;
+	    background-size: cover;
+	}
+</style>
+{% endblock image%}
+{% block content %}
+<div class="popup">
+	<div class="success" style="background: red;">
+		<img src="static/img/wrong.png" width="70", height="70">
+		<h1 style="font-size:20px;color:white">FAILED</h1>
+	</div>
+	<p style="color:#757575">Incorrect username or password</p>
+	<a class = "btn btn-default btn-outline" id = "ok" style="margin-bottom: 30px;">
+		OK
+	</a>
+</div>
+<div id = "overlayer"></div>
+<div class = "content-section">
+<form method = "POST" action="">
+	{{ form.hidden_tag() }}
+	<fieldset class = "form-group">
+		<legend class = "border-bottom mb4" id="heading">Sign in to Hagrocare</legend>
+		<div class = "form-group">
+			{{ form.email.label(class = "form-control-label") }}
+			{% if form.email.errors %}
+			{{ form.email(class = "form-control form-control-lg is-invalid") }}
+			<div class = "invalid-feedback" >
+				{% for error in form.email.errors %}
+				<span>
+					{{error}}
+				</span>
+				{% endfor %}
+			</div>
+			{% else %}
+			{{ form.email(class = "form-control form-control-lg", id="email") }}
+			{% endif %}
+		</div>
+		<div class = "form-group">
+			{{ form.password.label(class = "form-control-label") }}
+			{% if form.password.errors %}
+			{{ form.password(class = "form-control form-control-lg is-invalid") }}
+			<div class = "invalid-feedback" >
+				{% for error in form.password.errors %}
+				<span>
+					{{error}}
+				</span>
+				{% endfor %}
+			</div>
+			{% else %}
+			{{ form.password(class = "form-control form-control-lg", id="password") }}
+			{% endif %}
+		</div>
+		<div class = "form-check">
+			{{form.remember(class = "form-check-input")}}
+			{{form.remember.label(class = "form-check-label", id="remember")}}
+		</div>
+	</fieldset>
+		<small class = "text-muted ml-2">
+		<a href="#", id="forgot">Forgot Password</a>
+	</small>
+	<div class = "form-group">
+		{{ form.submit(class = "btn btn-default btn-outline", id="submit") }}
+	</div>
+</form>
+</div>
+<div class = "temp">
+	<small class="muted">
+		Need an account <a class = "ml-2" href = "{{url_for('registration')}}">Register</a>
+	</small>
+</div>
+
+{% endblock content %}

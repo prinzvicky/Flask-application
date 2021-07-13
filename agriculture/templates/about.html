@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block image %}
+<style>
+	.background{
+		background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.65)), url('/static/img/about.jpg');
+		background-position: center;
+	    background-repeat: no-repeat;
+	    height: 400px;
+	    width: 100%;
+	}
+
+</style>
+{% endblock image%}
+
+{% block content %}
+<div class="content-about">
+	<h1>
+		LEARN GROW CONNECT
+	</h1>
+	<h3>
+		About us
+	</h3>
+	<p>we provide leading solution to agricultural problems</p>	
+</div>
+{% endblock content %}
+
+{% block about %}
+<div class="about-main-div">
+	<img src="/static/img/about2.jpg">
+	<div class = "about-child-div">
+		<img class = "aboutus-icon" src="/static/img/aboutustopic.png">
+		<h6>WHO WE ARE</h6>
+		<h4>
+		We are helping farmers for growth and development
+		</h4>
+		<br>We provide leading solutions to agriculture sector problems, always committed to meeting the needs and expectations. Hagrocare is helping farmers to emerging markets maximize their profits and serves as an assistant for farming activities
+	</div>	
+	<img class = "corner-image" src="/static/img/aboutcornerimage.png">
+</div>
+{% endblock about%}

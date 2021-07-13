@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/main.css') }}">
+
+	<!-- socia-media icons -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	{% if title %}
+		<title>
+			{{title}}
+		</title>
+		{% else %}
+		<title>
+			temp
+		</title>
+	{% endif %}
+	{% block image %}{% endblock image %}
+</head>
+<body>
+<div class="background">
+<div class="navigation-bar" id="navbar">
+	<ul id="elt" class="">
+		<img src="/static/img/hagro.png" width="200" height="60">
+		<li>
+			<a href="{{url_for('home')}}">HOME</a>
+		</li>
+		<li>
+			<a href="{{url_for('about')}}">ABOUT</a>
+		</li>
+		<li>
+			<a href="{{url_for('services')}}">SERVICES</a>
+		</li>
+		<li>
+			<a href="#">CONTACT</a>
+		</li>
+		{% if nav == "login" %}
+		<li>
+			<a href="{{url_for('login')}}">{{nav}}</a>
+		</li>
+		{% else %}
+		<li>
+			<a href="{{url_for('logout')}}">{{nav}}</a>
+		</li>
+		{% endif %}
+	</ul>
+</div>
+{% block content %}{% endblock content %}
+</div>
+{% block about %}{% endblock about%}
+<footer id = "foot">
+	<div class="footer-container1">
+		<div class = "left-corner">
+			<h1>BEST SERVICE PROVIDER</h1>
+			<p>Bringing growth and profit to farmers</p>
+		</div>
+		<div class="right-corner">
+			<a href="#" class="btn btn-default btn-outline" >Contact Us</a>
+			<a href="{{url_for('about')}}" class="btn btn-default btn-outline" >About us</a>
+		</div>
+	</div>
+	<hr class = "divider">
+	<div class="footer-container2">
+		<div class = "left-corner">
+		<img class = "footer-image" src="/static/img/hagro.png">
+		<p>
+			<br>We are an efficient, competitive, innovative and agricultural sector Helping farmers for maximize their profits and guide them with them proper farming activities
+		</p>
+		</div>
+		<div class = "middle-one">
+		<h1>Quick Links</h1>
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">Products</a></li>
+			<li><a href="#">Blog</a></li>
+			<li><a href="#">Gallery</a></li>
+		</ul>	
+		</div>
+		<div class = "middle-two">
+			<h1>About</h1>
+			<ul>
+				<li><a href="#">Service</a></li>
+				<li><a href="#">Contacts</a></li>
+				<li><a href="#">Careers</a></li>
+				<li><a href="#">FAQ</a></li>
+			</ul>	
+		</div>
+		<div class = "right-corner">
+			<h1>Company</h1>
+			<ul>
+				<li><a href="#">About us</a></li>
+				<li><a href="#">Our Team</a></li>
+				<li><a href="#">Testimonials</a></li>
+			</ul>	
+		</div>	
+	</div>
+	<div class="social">
+	    <ul>
+	        <li><a href="#"><i class="fa fa-lg fa-facebook"></i></a></li>
+	        <li><a href="#"><i class="fa fa-lg fa-twitter"></i></a></li>
+	        <li><a href="#"><i class="fa fa-lg fa-google-plus"></i></a></li>
+	      
+	        <li><a href="#"><i class="fa fa-lg fa-instagram"></i></a></li>
+	        <li><a href="#"><i class="fa fa-lg fa-youtube-play"></i></a></li>
+	    </ul>
+	</div>
+	<hr class = "divider">
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+let flash = {{flash}}
+</script>
+<script src="{{ url_for('static', filename='js/index.js') }}"></script>
+</body>
+</html>
